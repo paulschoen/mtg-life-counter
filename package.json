@@ -1,0 +1,32 @@
+{
+  "nativescript": {
+    "id": "org.nativescript.mtgcounter",
+    "tns-ios": {
+      "version": "6.1.0"
+    },
+    "tns-android": {
+      "version": "6.1.0"
+    }
+  },
+  "description": "NativeScript Application",
+  "license": "SEE LICENSE IN <your-license-filename>",
+  "repository": "<fill-your-repository-here>",
+  "dependencies": {
+    "@nstudio/nativescript-floatingactionbutton": "^1.0.1",
+    "nativescript-cfalert-dialog": "^1.0.15",
+    "nativescript-theme-core": "~1.0.6",
+    "nativescript-vue": "~2.4.0",
+    "tns-core-modules": "~6.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "~7.1.0",
+    "@babel/preset-env": "~7.1.0",
+    "babel-loader": "~8.0.0",
+    "nativescript-dev-webpack": "~1.2.0",
+    "nativescript-vue-template-compiler": "~2.4.0",
+    "node-sass": "^4.7.1",
+    "vue-loader": "~15.4.0"
+  },
+  "gitHead": "9475c272a4c74ea6baf24d578bdf46c23a400fea",
+  "readme": "NativeScript Application"
+}
