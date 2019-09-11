@@ -1,10 +1,9 @@
 <template>
   <Page actionBarHidden=true @loaded='loadedFunction'>
     <GridLayout class="container" rows="auto, *" columns="auto, *" v-if='loaded'>
-      <PlayerPanel width="50%" height="50%" row="0" col="0" :colors='colors' :players='players' class="rotated small" :player="players[0]"></PlayerPanel>
-      <PlayerPanel width="50%" height="50%" row="0" col="1" :colors='colors' :players='players' class="rotated small" :player="players[1]"></PlayerPanel>
-      <PlayerPanel width="50%" height="50%" row="1" col="0" :colors='colors' :players='players' class="small" :player="players[2]"></PlayerPanel>
-      <PlayerPanel width="50%" height="50%" row="1" col="1" :colors='colors' :players='players' class="small" :player="players[3]"></PlayerPanel>
+      <PlayerPanel turnLeft=true width="50%" height="60%" row="0" col="0" :colors='colors' :players='players' class="rotated small" :player="players[0]"></PlayerPanel>
+      <PlayerPanel  width="50%" height="60%" row="0" col="1" :colors='colors' :players='players' class="rotated small" :player="players[1]"></PlayerPanel>
+      <PlayerPanel width="100%" height="40%" row="1" colSpan="2" :colors='colors' :players='players' class="large" :player="players[2]"></PlayerPanel>
       <fab
         @tap="showPlayers"
         v-if='settings'
@@ -133,22 +132,14 @@ export default {
           name: 'Player Three',
           index: 1,
           cmdDmg: []
-        },
-        {
-          id: 3,
-          backgroundColor: colors[Math.floor(Math.random()*colors.length)].hex,
-          life: 40,
-          name: 'Player Four',
-          index: 1,
-          cmdDmg: []
         }
       ]
     }
   },
   methods: {
     loadedFunction(){
-      OrientationModule.setCurrentOrientation("landscape",function(){
-        console.log("landscape orientation set");
+      OrientationModule.setCurrentOrientation("portrait",function(){
+          console.log("portrait orientation set");
       });
       if (androidApp && device.sdkVersion >= '21') {
         const View = android.view.View;
@@ -156,8 +147,8 @@ export default {
         const decorView = window.getDecorView();
         decorView.setSystemUiVisibility(
           View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
-          View.SYSTEM_UI_FLAG_FULLSCREEN |
-          View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+            View.SYSTEM_UI_FLAG_FULLSCREEN |
+            View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
         );
       }
       setTimeout(() => {

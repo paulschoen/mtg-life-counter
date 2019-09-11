@@ -14,6 +14,10 @@
   "dependencies": {
     "@nstudio/nativescript-floatingactionbutton": "^1.0.1",
     "nativescript-cfalert-dialog": "^1.0.15",
+    "nativescript-pager": "^11.0.9",
+    "nativescript-platform-css": "^1.6.10",
+    "nativescript-screen-orientation": "^2.0.0",
+    "nativescript-status-bar": "^1.2.0",
     "nativescript-theme-core": "~1.0.6",
     "nativescript-vue": "~2.4.0",
     "tns-core-modules": "~6.1.0"
